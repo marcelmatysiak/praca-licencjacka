@@ -44,13 +44,25 @@
         <li>
           <span class="step-num">1</span>
           <div>
-            <span>Zagraj w grę online lub <strong>pobierz i zagraj</strong> na swoim komputerze.</span>
+            <span><strong>Pobierz grę</strong> przypisaną do wylosowanej wersji.</span>
           </div>
         </li>
         <li>
           <span class="step-num">2</span>
           <div>
-            <span>Wypełnij <strong>ankietę</strong> przypisaną do wylosowanej wersji gry.</span>
+            <span>Wypakuj grę lub uruchom ją bezpośrednio z pliku ZIP.</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div>
+            <span>Wejdź w folder <strong>Insula</strong> i uruchom plik <strong>Horror Game.exe</strong>.</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <div>
+            <span>Po zakończeniu gry wypełnij <strong>ankietę</strong> przypisaną do swojej wersji.</span>
             <ul class="sub-steps">
               <li><span class="sub-dot"></span>Wersja A — ankieta A</li>
               <li><span class="sub-dot"></span>Wersja B — ankieta B</li>
@@ -60,26 +72,24 @@
       </ul>
     </div>
 
+    <div class="steam-section requirements-box">
+      <div class="steam-section-label">Wymagania</div>
+      <ul class="requirements-list">
+        <li>Komputer z systemem Windows</li>
+        <li>Program czytający pliki .zip</li>
+      </ul>
+    </div>
+
     <div class="steam-section">
       <div class="steam-section-label">Linki</div>
       <div class="steam-buttons">
-        <div class="steam-buttons-row">
-          <a id="btn-online" href="#" target="_blank" class="steam-btn steam-btn-primary">
-            <svg class="steam-btn-icon" viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
-            <div class="steam-btn-text">
-              <span class="btn-label">Zagraj Online</span>
-              <span class="btn-desc">Uruchom grę w przeglądarce</span>
-            </div>
-          </a>
-
-          <a id="btn-download" href="#" download class="steam-btn steam-btn-green">
-            <svg class="steam-btn-icon" viewBox="0 0 24 24"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zM4 20h16v-2H4v2z"/></svg>
-            <div class="steam-btn-text">
-              <span class="btn-label">Pobierz i Zagraj</span>
-              <span class="btn-desc">Pobierz wersję na komputer</span>
-            </div>
-          </a>
-        </div>
+        <a id="btn-download" href="#" download class="steam-btn steam-btn-green">
+          <svg class="steam-btn-icon" viewBox="0 0 24 24"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zM4 20h16v-2H4v2z"/></svg>
+          <div class="steam-btn-text">
+            <span class="btn-label">Pobierz i zagraj</span>
+            <span class="btn-desc">Pobierz wylosowaną wersję gry na komputer</span>
+          </div>
+        </a>
 
         <a id="btn-guide" href="#" target="_blank" class="steam-btn steam-btn-guide">
           <svg class="steam-btn-icon" viewBox="0 0 24 24"><path d="M10 16.5v-9l6 4.5-6 4.5zM12 2a10 10 0 1 0 .01 0H12zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/></svg>
@@ -88,6 +98,16 @@
             <span class="btn-desc">Zobacz poradnik dla swojej wersji</span>
           </div>
         </a>
+
+        <a href="https://ziutkowski.itch.io/insula" target="_blank" class="steam-btn steam-btn-itch">
+          <svg class="steam-btn-icon" viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5zm0 2.3L18.7 8 12 11.7 5.3 8 12 4.3zM5 9.7l6 3.3v6.2l-6-3.3V9.7zm14 6.2-6 3.3V13l6-3.3v6.2z"/></svg>
+          <div class="steam-btn-text">
+            <span class="btn-label">Strona gry</span>
+            <span class="btn-desc">Dla zainteresowanych — profil gry na itch.io</span>
+          </div>
+        </a>
+
+        <a href="assets/mapa-podpowiedz.jpg" target="_blank" class="map-text-link">Mapa z podpowiedzią</a>
 
         <div class="btn-separator">
           <div class="btn-separator-line"></div>
@@ -146,13 +166,11 @@
 <script>
   var VARIANTS = {
     A: {
-      online: "https://pastebin.com/rTs2BVdT",
       download: "Insula A.zip",
       survey: "https://docs.google.com/forms/d/e/1FAIpQLSeZZQKkGckZd31vVH-p3xFRLXc77jyOCXHdrmaBvw5B_6bJ-g/viewform?pli=1",
       guide: "https://www.youtube.com/watch?v=VpeUeobnUfI"
     },
     B: {
-      online: "https://pastebin.com/Jb03UN8z",
       download: "Insula B.zip",
       survey: "https://docs.google.com/forms/d/e/1FAIpQLSdMUCPZVQolspSRu82sU22w57Q_DRPvetG9uCQaWVEn8m3caA/viewform",
       guide: "https://www.youtube.com/watch?v=IL7sP8lbrng"
@@ -162,11 +180,10 @@
   var variant = Math.random() < 0.5 ? "A" : "B";
   var selected = VARIANTS[variant];
 
-  document.getElementById("btn-online").href = selected.online;
   document.getElementById("btn-download").href = selected.download;
   document.getElementById("btn-survey").href = selected.survey;
   document.getElementById("btn-guide").href = selected.guide;
-  document.getElementById("footer-version").textContent = "v1.0.0 · Wersja " + variant;
+  document.getElementById("footer-version").textContent = "v1.0.1 · Wersja " + variant;
 </script>
 
 </body>

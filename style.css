@@ -160,11 +160,66 @@ body::before {
 .steam-btn-green { background: linear-gradient(180deg, #6fcf5b 5%, #4a9e38 95%); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 2px 4px rgba(0,0,0,.4); }
 .steam-btn-secondary { background: linear-gradient(180deg, #4b6a87 5%, #3a5468 95%); color: #c6d4df; box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 2px 4px rgba(0,0,0,.4); }
 .steam-btn-guide { background: linear-gradient(180deg, #9b59b6 5%, #6f3b8c 95%); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 2px 4px rgba(0,0,0,.4); }
+.steam-btn-itch { background: linear-gradient(180deg, #fa5c5c 5%, #b63a3a 95%); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 2px 4px rgba(0,0,0,.4); }
 .steam-btn:hover { filter: brightness(1.1); }
 .steam-btn-icon { width: 22px; height: 22px; flex-shrink: 0; fill: currentColor; opacity: .9; }
 .steam-btn-text { display: flex; flex-direction: column; }
 .steam-btn-text .btn-label { font-size: 13px; font-weight: 700; letter-spacing: .02em; }
 .steam-btn-text .btn-desc { font-size: 10px; font-weight: 400; opacity: .75; margin-top: 1px; }
+
+
+.requirements-box {
+  background: rgba(0,0,0,.16);
+  border: 1px solid rgba(76,97,122,.32);
+  border-radius: 4px;
+  padding: 14px;
+}
+
+.requirements-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #8ba3b8;
+  font-size: 13px;
+}
+
+.requirements-list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.requirements-list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #66c0f4;
+}
+
+.map-text-link {
+  display: block;
+  padding: 11px 14px;
+  border: 1px solid rgba(102,192,244,.35);
+  background: rgba(102,192,244,.08);
+  border-radius: 3px;
+  color: #66c0f4;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  transition: background .15s ease, color .15s ease, transform .1s ease;
+}
+
+.map-text-link:hover {
+  background: rgba(102,192,244,.16);
+  color: #fff;
+}
+
+.map-text-link:active { transform: scale(.99); }
 
 .btn-separator { display: flex; align-items: center; gap: 10px; margin: 2px 0; }
 .btn-separator-line { flex: 1; height: 1px; background: rgba(76,97,122,.5); }
